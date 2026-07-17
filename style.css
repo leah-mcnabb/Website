@@ -4,17 +4,14 @@ body{
 .title {
 	color: #5C6AC4;
 }
-@media screen and (max-width: 480px) {
-  body {
-    background-color: rgb(255, 255, 255);
-  }
-}
 
 .header {
   display: flex;
   background-color: rgb(7, 105, 20);
   margin: -10px;
   padding: 0px;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .header div {
@@ -55,5 +52,24 @@ body{
 
 .button:hover{
   background-color: rgb(74, 140, 83);
-  cursor: url("https://images.editor.website/uploads/b/ae7fb200-c5c1-11e9-a44b-3988929b030a/Allderdice%20Dragon.jpg?width=400"), auto;
+  cursor: pointer;
+  /* cursor: url("mouse_cursor.png"), auto; */
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    background-color: rgb(255, 255, 255);
+  }
+  .button {
+    font-size: 20px;
+    background-color: rgb(145, 207, 153);
+    width: 75px;
+    height: 30px;
+    /* padding: 3px 30px; */
+    border: none;
+    border-radius: 10px;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: Calibri, system-ui;
+  }
+
 }

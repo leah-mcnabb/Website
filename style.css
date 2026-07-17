@@ -6,19 +6,19 @@ body{
 }
 @media screen and (max-width: 480px) {
   body {
-    background-color: rgb(95, 255, 135);
+    background-color: rgb(255, 255, 255);
   }
 }
 
 .header {
   display: flex;
-  background-color: DodgerBlue;
+  background-color: rgb(7, 105, 20);
   margin: -10px;
   padding: 0px;
 }
 
 .header div {
-  background-color: DodgerBlue;
+  background-color: rgb(7, 105, 20);
   margin: 5px;
   padding: 5px;
   font-size: 20px;
@@ -28,7 +28,7 @@ body{
 .container {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: rgb(42, 134, 209);
+  background-color: rgb(72, 129, 243);
   padding: 10px;
   margin: 10px;
   /*width: 100vw; */
@@ -43,14 +43,15 @@ body{
 
 .button {
   font-size: 30px;
-  background-color: rgb(41, 255, 126);
+  background-color: rgb(145, 207, 153);
   width: 125px;
   height: 50px;
   /* padding: 3px 30px; */
   border: none;
   border-radius: 15px;
+  font-family: "Brush Script MT", cursive;
 }
 
 .button:hover{
-  background-color: rgb(195, 199, 205)
+  background-color: rgb(74, 140, 83)
 }

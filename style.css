@@ -49,9 +49,11 @@ body{
   /* padding: 3px 30px; */
   border: none;
   border-radius: 15px;
-  font-family: "Brush Script MT", cursive;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+  font-family: Calibri, system-ui;
 }
 
 .button:hover{
-  background-color: rgb(74, 140, 83)
+  background-color: rgb(74, 140, 83);
+  cursor: url("https://images.editor.website/uploads/b/ae7fb200-c5c1-11e9-a44b-3988929b030a/Allderdice%20Dragon.jpg?width=400"), auto;
 }

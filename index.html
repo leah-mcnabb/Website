@@ -12,21 +12,14 @@
 <div style="display: flex; justify-content: flex-end; padding: 100px;">
   <a href="about.html">About</a>
 </div>
-    <div class="header-container">
-        <h1>Clicks: </h1>
-    </div>
+</p> id="Clicks-Text">Clicks:</p>
     <button onclick="Click()">Click Me!</button>
 
         <script>
-            var clicks = 0;
-
-            // Insert the variable inside the <h1> tag using backticks
-            const headerHtml = `<h1>Clicks: ${clicks}</h1>`;
-
-            // Inject it into your web page
+            let clicks = 0;
             function Click() {
                 clicks += 1;
-                document.getElementById("header-container").innerHTML = headerHtml;
+                document.getElementById("Clicks-Text").textContent = "Clicks: "+clicks;
 
 
             }

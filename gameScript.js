@@ -2,11 +2,7 @@
 const canvas = document.getElementById('gameCanvas');
 
 // 2. Get the 2D rendering context
-const ctx = canvas.getContext('2d');
 
-// Example: Draw a simple player square to verify it works
-ctx.fillStyle = 'red';
-ctx.fillRect(50, 50, 40, 40); // x, y, width, height
 
 const img = document.createElement("img");
 img.style.width = "100px";

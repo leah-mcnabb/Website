@@ -12,13 +12,31 @@
 <div style="display: flex; justify-content: flex-end; padding: 100px;">
   <a href="about.html">About</a>
 </div>
+    <div class="header-container">
+        <h1>Clicks: </h1>
+    </div>
+    <button onclick="Click()">Click Me!</button>
+
+        <script>
+            var clicks = 0;
+
+            // Insert the variable inside the <h1> tag using backticks
+            const headerHtml = `<h1>Clicks: ${clicks}</h1>`;
+
+            // Inject it into your web page
+            function Click() {
+                clicks += 1;
+                document.getElementById("header-container").innerHTML = headerHtml;
+
+
+            }
+        </script>
     <a href="contact.html">Contact</a >
         
     
     <a href="game.html">Game link</a>
 
     <!-- Step 1: Create a button with a unique ID -->
-    <button id="myBtn">Click Me!</button>
     <button onclick="showImage()">Show Image</button>
 
       <script>
@@ -27,26 +45,25 @@
         const image = document.getElementById("diceLogo");
         
         // Change the display style to make it visible
-            if (image.style.display == "block") {
-            image.style.display = "none"
+            if (image.style.display == "none") {
+            image.style.display = "block"
             }
             else {
-              image.style.display = "block"
+              image.style.display = "none"
             }
 
       }
+
       </script>
     <!-- Step 2: Link your external JavaScript file -->
 
       <img id="diceLogo"
         img src="https://images.editor.website/uploads/b/ae7fb200-c5c1-11e9-a44b-3988929b030a/Allderdice%20Dragon.jpg?width=400"
         width="300" height="300"
-        alt="Allderdice Dragons Logo"
-
-        >
-      <button onclick="showImage()">Show Image</button>
+        alt="Allderdice Dragons Logo">
 
 
         
   </body>
+
 </html>

@@ -1,0 +1,42 @@
+name: Run Java File From Repo B
+on:
+  workflow_dispatch:
+    inputs:
+      scanner_input:
+        description: 'Input to pass to the Java Scanner'
+        required: true
+        default: 'Hello World'
+
+jobs:
+  run-java-script:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout Repo A
+      - name: Checkout Repo A
+        uses: actions/checkout@v4
+
+      # Step 2: Checkout Repo B
+      - name: Checkout Repo B
+        uses: actions/checkout@v4
+        with:
+          repository: blue-or-pink/super-duper-fiesta
+          path: super-duper-fiesta
+
+      # Step 3: Install Java on the runner
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      # Step 4: Compile and Run the Java file with the piped input
+      - name: Compile and Run Java
+        run: |
+          # 1. Move into the repo-b directory where the Java code lives
+          cd repo-b
+          
+          # 2. Compile your Java file (change YourScript.java to your actual file name)
+          javac Main.java
+          
+          # 3. Pipe the scanner input into the running Java program
+          echo "${{ github.event.inputs.scanner_input }}" | java Main

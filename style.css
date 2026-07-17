@@ -18,10 +18,10 @@ body{
 }
 
 .header div {
-  background-color: #f1f1f1;
-  margin: 10px;
-  padding: 20px;
-  font-size: 30px;
+  background-color: DodgerBlue;
+  margin: 5px;
+  padding: 5px;
+  font-size: 20px;
 }
 
 
@@ -39,4 +39,18 @@ body{
   padding: 10px;
   font-size: 40px;
   text-align: center;
+}
+
+.button {
+  font-size: 30px;
+  background-color: rgb(41, 255, 126);
+  width: 125px;
+  height: 50px;
+  /* padding: 3px 30px; */
+  border: none;
+  border-radius: 15px;
+}
+
+.button:hover{
+  background-color: rgb(195, 199, 205)
 }

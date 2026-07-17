@@ -1,13 +1,36 @@
-  .container {
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+  display: flex;
+  background-color: DodgerBlue;
+}
+
+.header div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+
+.container {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: dodgerblue;
+  background-color: rgb(42, 134, 209);
   padding: 10px;
+  /*width: 100vw; */
 }
 .container div {
-  background-color: #f1f1f1;
-  border: 1px solid black;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
   padding: 10px;
-  font-size: 30px;
+  font-size: 40px;
   text-align: center;
+}
+body{
+  padding: 25px;
+  background-color: #ffffff;
 }

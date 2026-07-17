@@ -5,3 +5,11 @@ body{
 .title {
 	color: #5C6AC4;
 }
+.parent-container {
+  width: 100%;       /* Ensure container spans the whole width */
+  overflow: visible; /* Prevent the container from clipping edges */
+}
+.moving-element {
+  position: absolute;
+  left: 10vw;  /* Keeps it 10% away from the left edge of any screen size */
+}

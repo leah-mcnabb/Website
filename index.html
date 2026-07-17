@@ -12,7 +12,20 @@
 <div style="display: flex; justify-content: flex-end; padding: 100px;">
   <a href="about.html">About</a>
 </div>
-</p> id="Clicks-Text">Clicks:</p>
+<p id="Clicks-Text"class="Clicks-Text">Clicks: </p>
+<style>
+.Clicks-Text {
+        font-size: 25px;
+    font-family: sans-serif;     /* 20% down from the top of the screen */
+    
+    /* Optional styling to make it look nicer */
+    z-index: 9999;
+  }
+
+</style>
+
+<img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHM5NDY4eGFqd3hvZmoxYmwwZ3g4OW9rMHVsenh3bGkwYzFqajVwbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/26BRx71hqRexBe7Wo/giphy.gif"
+    alt="boom"id="boom"style="display:none">
     <button onclick="Click()">Click Me!</button>
 
         <script>
@@ -20,9 +33,18 @@
             function Click() {
                 clicks += 1;
                 document.getElementById("Clicks-Text").textContent = "Clicks: "+clicks;
+                // Select the element
+                document.getElementById("boom").style.display = "block";
+                
+                // Set a timer to run after 3000 milliseconds (3 seconds)
+                setTimeout(function() {
+                    document.getElementById("boom").style.display = "none";
+ // Completely removes it from layout
+                // Or use: element.style.visibility = "hidden"; (Leaves a blank space)
+                }, 750);
+            };
 
-
-            }
+            
         </script>
     <a href="contact.html">Contact</a >
         
@@ -30,7 +52,25 @@
     <a href="game.html">Game link</a>
 
     <!-- Step 1: Create a button with a unique ID -->
-    <button onclick="showImage()">Show Image</button>
+    <button onclick="ToggleBackground()">Toggle Background</button>
+
+      <script>
+      function ToggleBackground() {
+        // Find the image by its specific ID
+        const isHuePaused = document.body.classList.contains('hue-paused');
+        
+        // Change the display style to make it visible
+        if (isHuePaused) {
+            document.body.classList.remove('hue-paused');
+        }
+        else {
+            document.body.classList.add('hue-paused');
+        }
+
+      }
+
+      </script>
+      <button onclick="showImage()">Show Image</button>
 
       <script>
       function showImage() {

@@ -11,9 +11,12 @@
   </head>
 <body>
 
-<div style="display: flex; justify-content: flex-end; padding: 100px;">
-  <a href="about.html">About</a>
-</div>
+        <ul>
+        <li><a href="index.html"class="active">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html" >About</a></li>
+        <li><a href="game.html">Game</a></li>
+    </ul>
 <p id="Clicks-Text"class="Clicks-Text">Clicks: </p>
 <style>
 .Clicks-Text {
@@ -32,6 +35,29 @@
     
     <a href="game.html">Game link</a>
 
+        <script>
+            let clicks = 0;
+            function Click() {
+                clicks += 1;
+                document.getElementById("Clicks-Text").textContent = "Clicks: "+clicks;
+                // Select the element
+                document.getElementById("boom").style.display = "block";
+                
+                // Set a timer to run after 3000 milliseconds (3 seconds)
+                setTimeout(function() {
+                    document.getElementById("boom").style.display = "none";
+ // Completely removes it from layout
+                // Or use: element.style.visibility = "hidden"; (Leaves a blank space)
+                }, 750);
+            };
+
+            
+        </script>
+        
+        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHM5NDY4eGFqd3hvZmoxYmwwZ3g4OW9rMHVsenh3bGkwYzFqajVwbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/26BRx71hqRexBe7Wo/giphy.gif"
+    alt="boom"id="boom"style="display:none">
+    
+    <!-- Step 1: Create a button with a unique ID -->
     <button onclick="ToggleBackground()">Toggle Background</button>
 
     <button onclick="showImage()">Show Image</button>

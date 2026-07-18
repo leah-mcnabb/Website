@@ -5,8 +5,10 @@
     <title>Allderdice Linguistics Club</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-</head>
+    <link rel="icon" type="image/x-icon" href="allderdice_logo.png">
+    <style> body{background-color: red;} </style>
+    <script src="index.js"></script>
+  </head>
 <body>
 
 <div style="display: flex; justify-content: flex-end; padding: 100px;">
@@ -15,88 +17,30 @@
 <p id="Clicks-Text"class="Clicks-Text">Clicks: </p>
 <style>
 .Clicks-Text {
-        font-size: 25px;
+    font-size: 25px;
     font-family: sans-serif;     /* 20% down from the top of the screen */
     
     /* Optional styling to make it look nicer */
     z-index: 9999;
-  }
-
-</style>
-
+  } </style>
 
     <button onclick="Click()">Click Me!</button>
 
-        <script>
-            let clicks = 0;
-            function Click() {
-                clicks += 1;
-                document.getElementById("Clicks-Text").textContent = "Clicks: "+clicks;
-                // Select the element
-                document.getElementById("boom").style.display = "block";
-                
-                // Set a timer to run after 3000 milliseconds (3 seconds)
-                setTimeout(function() {
-                    document.getElementById("boom").style.display = "none";
- // Completely removes it from layout
-                // Or use: element.style.visibility = "hidden"; (Leaves a blank space)
-                }, 750);
-            };
-
-            
-        </script>
     <a href="contact.html">Contact</a >
-        <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHM5NDY4eGFqd3hvZmoxYmwwZ3g4OW9rMHVsenh3bGkwYzFqajVwbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/26BRx71hqRexBe7Wo/giphy.gif"
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHM5NDY4eGFqd3hvZmoxYmwwZ3g4OW9rMHVsenh3bGkwYzFqajVwbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/26BRx71hqRexBe7Wo/giphy.gif"
     alt="boom"id="boom"style="display:none">
     
     <a href="game.html">Game link</a>
 
-    <!-- Step 1: Create a button with a unique ID -->
     <button onclick="ToggleBackground()">Toggle Background</button>
 
-      <script>
-      function ToggleBackground() {
-        // Find the image by its specific ID
-        const isHuePaused = document.body.classList.contains('hue-paused');
-        
-        // Change the display style to make it visible
-        if (isHuePaused) {
-            document.body.classList.remove('hue-paused');
-        }
-        else {
-            document.body.classList.add('hue-paused');
-        }
+    <button onclick="showImage()">Show Image</button>
 
-      }
+    <img id="diceLogo"
+      img src="https://images.editor.website/uploads/b/ae7fb200-c5c1-11e9-a44b-3988929b030a/Allderdice%20Dragon.jpg?width=400"
+      width="300" height="300"
+      alt="Allderdice Dragons Logo">
 
-      </script>
-      <button onclick="showImage()">Show Image</button>
-
-      <script>
-      function showImage() {
-        // Find the image by its specific ID
-        const image = document.getElementById("diceLogo");
-        
-        // Change the display style to make it visible
-            if (image.style.display == "none") {
-            image.style.display = "block"
-            }
-            else {
-              image.style.display = "none"
-            }
-
-      }
-
-      </script>
-    <!-- Step 2: Link your external JavaScript file -->
-
-      <img id="diceLogo"
-        img src="https://images.editor.website/uploads/b/ae7fb200-c5c1-11e9-a44b-3988929b030a/Allderdice%20Dragon.jpg?width=400"
-        width="300" height="300"
-        alt="Allderdice Dragons Logo">
-
-
-        
+   
   </body>
-
 </html>

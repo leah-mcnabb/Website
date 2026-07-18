@@ -76,12 +76,14 @@ ul {
       display: block;
       float: left;
     }
+    /*Color for the tab you are hovering over*/
     ul li a:hover{
       color: rgb(255, 255, 255);
       background-color: rgb(31, 81, 39);
-    }
+    } 
+    /*Color for the tab you are currently on*/
     ul li a.active {
-      background-color: purple;
+      background-color: rgb(97, 150, 109);
     }
 
 @media screen and (max-width: 480px) {

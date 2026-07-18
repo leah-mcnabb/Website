@@ -29,12 +29,14 @@ body{
   padding: 2px;
   margin: 10px;
   box-shadow: rgb(137, 189, 132);
+  border-radius: 10px;
 }
 
 .about div {
   background-color: rgb(255, 255, 255);
   border: 1px solid rgb(0, 0, 0);
   padding: 0px;
+  margin: 3px;
   /* font-size: 20px; */
   text-align: center;
   box-shadow: 0 0 0 2px rgb(137, 189, 132);

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Geomini:wght@200..800&display=swap');
+
 body{
   background-color: #ffffff;
   margin: 0;
@@ -79,14 +81,16 @@ ul {
     overflow: hidden;
     display: flex;
     text-decoration: none;
+    align-items: center;
     }
   ul li a{
       text-decoration: none;
       color: black;
       padding: 10px;
-      display: block;
-      float: left;
-    }
+      display: block; 
+      font-family: 'Geomini', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+
   /*Color for the tab you are hovering over*/
   ul li a:hover{
       color: rgb(255, 255, 255);

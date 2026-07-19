@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Geomini:wght@200..800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Redacted+Script:wght@300;400;700&display=swap');
 body{
   background-color: #ffffff;
   margin: 0;
@@ -46,7 +46,7 @@ body{
 
 p{
   margin: 3%;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   line-height: 1.75;
 }
 

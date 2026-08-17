@@ -20,36 +20,47 @@
 <style>
 .container {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto;
+  grid-template-columns: repeat(7, 1fr);
   background-color: rgb(216, 149, 255);
   padding: 10px;
+  /* width: 90%; */
+  width: 90%;
+  height: 90%;
+  
 }
-.container weekday {
+.container .weekday {
   background-color: #fdfcfc;
-  
   border: 1px solid black;
   padding: 10px;
-  font-size: 30px;
-  text-align: center
+  font-size: 3vw;
+  text-align: center;
 }
-.container weekend {
+.container .weekend {
   background-color: #c6c5c5;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 3vw;
+  text-align: center;
+}
+.container .wed {
+  background-color: rgb(145, 207, 153);
   
   border: 1px solid black;
   padding: 10px;
-  font-size: 30px;
-  text-align: center
+  font-size: 3vw;
+  text-align: center;
 }
-.container wed {
-  background-color: #64ff83;
-  
-  border: 1px solid black;
-  padding: 10px;
-  font-size: 30px;
-  text-align: center
+
+@media screen and (max-width: 285px){
+  .container .weekday,
+  .container .weekend,
+  .container .wed{
+    padding: 0;
+  }
 }
+
 </style>
-<body></body>
+<body>
     <ul>
       <li><a href="index.html"class="active">Home</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -62,67 +73,67 @@
     <p>Our next meeting is: <strong>Wednesday, August 26th at 2:40pm in room 271</strong></p>
 
     <p style="font-size: 25px; text-align: center">August:</p>
-    </body>
+    
     <div class="container">
 
     <script type="text/javascript" src="//://google.com"></script>
 
   
-  <weekend>Sun</weekend>
-  <weekday>Mon</weekday>
-  <weekday>Tue</weekday>
-  <wed>Wed</wed>
-  <weekday>Thu</weekday>
-  <weekday>Fri</weekday>
-  <weekend>Sat</weekend>
+  <div class="weekend">Sun</div>
+  <div class="weekday">Mon</div>
+  <div class="weekday">Tue</div>
+  <div class="weekday">Wed</div>
+  <div class="weekday">Thu</div>
+  <div class="weekday">Fri</div>
+  <div class="weekend">Sat</div>
 
-  <weekend></weekend>
-  <weekday></weekday>
-  <weekday></weekday>
-  <weekday></weekday>
-  <weekday></weekday>
-  <weekday></weekday>
-  <weekend>1</weekend>
+  <div class="weekend"></div>
+  <div class="weekday"></div>
+  <div class="weekday"></div>
+  <div class="weekday"></div>
+  <div class="weekday"></div>
+  <div class="weekday"></div>
+  <div class="weekend">1</div>
 
-  <weekend>2</weekend>
-  <weekday>3</weekday>
-  <weekday>4</weekday>
-  <weekday>5</weekday>
-  <weekday>6</weekday>
-  <weekday>7</weekday>
-  <weekend>8</weekend>
+  <div class="weekend">2</div>
+  <div class="weekday">3</div>
+  <div class="weekday">4</div>
+  <div class="weekday">5</div>
+  <div class="weekday">6</div>
+  <div class="weekday">7</div>
+  <div class="weekend">8</div>
 
-  <weekend>9</weekend>
-  <weekday>10</weekday>
-  <weekday>11</weekday>
-  <weekday>12</weekday>
-  <weekday>13</weekday>
-  <weekday>14</weekday>
-  <weekend>15</weekend>
+  <div class="weekend">9</div>
+  <div class="weekday">10</div>
+  <div class="weekday">11</div>
+  <div class="weekday">12</div>
+  <div class="weekday">13</div>
+  <div class="weekday">14</div>
+  <div class="weekend">15</div>
 
-  <weekend>16</weekend>
-  <weekday>17</weekday>
-  <weekday>18</weekday>
-  <weekday>19</weekday>
-  <weekday>20</weekday>
-  <weekday>21</weekday>
-  <weekend>22</weekend>
+  <div class="weekend">16</div>
+  <div class="weekday">17</div>
+  <div class="weekday">18</div>
+  <div class="weekday">19</div>
+  <div class="weekday">20</div>
+  <div class="weekday">21</div>
+  <div class="weekend">22</div>
 
-  <weekend>23</weekend>
-  <weekday>24</weekday>
-  <weekday>25</weekday>
-  <wed>26</wed>
-  <weekday>27</weekday>
-  <weekday>28</weekday>
-  <weekend>29</weekend>
+  <div class="weekend">23</div>
+  <div class="weekday">24</div>
+  <div class="weekday">25</div>
+  <div class="wed">26</div>
+  <div class="weekday">27</div>
+  <div class="weekday">28</div>
+  <div class="weekend">29</div>
 
-  <weekend>30</weekend>
-  <weekday>31</weekday>
-  <weekday></weekday>
-  <weekday></weekday>
-  <weekday></weekday>
-  <weekday></weekday>
-  <weekend></weekend>
+  <div class="weekend">30</div>
+  <div class="weekday">31</div>
+  <div class="weekday"></div>
+  <div class="weekday"></div>
+  <div class="weekday"></div>
+  <div class="weekday"></div>
+  <div class="weekend"></div>
   
 
 </div>
@@ -130,36 +141,5 @@
 
 <p><strong>Quiz of the week: </strong><a href="https://www.geoguessr.com/vgp/3204?gamemode=pinhard">How many African capitals can you get correct?</a></p>
 <p>DM our Instagram with your highscore, we post the highest with the quickest time at the end of each week!</p>
-<!-- <p id="Clicks-Text"class="Clicks-Text">Clicks: </p> -->
-<!-- <style>
-.Clicks-Text {
-    font-size: 25px;
-    font-family: sans-serif;     /* 20% down from the top of the screen */
-    
-    /* Optional styling to make it look nicer */
-    z-index: 9999;
-  } </style> -->
-
-    <!-- <button onclick="Click()">Click Me!</button>
-
-    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHM5NDY4eGFqd3hvZmoxYmwwZ3g4OW9rMHVsenh3bGkwYzFqajVwbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/26BRx71hqRexBe7Wo/giphy.gif"
-    alt="boom"id="boom"style="display:none">
-    
-
-        
-    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHM5NDY4eGFqd3hvZmoxYmwwZ3g4OW9rMHVsenh3bGkwYzFqajVwbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/26BRx71hqRexBe7Wo/giphy.gif"
-    alt="boom"id="boom"style="display:none">
-    
-    <Step 1: Create a button with a unique ID
-    <button onclick="ToggleBackground()">Toggle Background</button>
-
-    <button onclick="showImage()">Show Image</button>
-
-    <img id="diceLogo"
-      img src="https://images.editor.website/uploads/b/ae7fb200-c5c1-11e9-a44b-3988929b030a/Allderdice%20Dragon.jpg?width=400"
-      width="300" height="300"
-      alt="Allderdice Dragons Logo">
-
-   
- </body> -->
+</body>
 </html>

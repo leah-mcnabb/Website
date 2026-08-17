@@ -7,8 +7,9 @@ const canvas = document.getElementById('gameCanvas');
 const img = document.createElement("img");
 img.style.width = "100px";
 img.style.height = "100px";
+img.style.imageRendering = 'pixelated';
 // Step 2: Set the image source and alternative description
-img.src = "https://images.editor.website/uploads/b/ae7fb200-c5c1-11e9-a44b-3988929b030a/Allderdice%20Dragon.jpg?width=400";
+img.src = "cat.png";
 img.alt = "A descriptive text for accessibility";
 
 // Step 3: Append the image to the HTML body or a specific container
@@ -25,24 +26,36 @@ let posX = 0;
 
       switch (key) {
         case "w": // Move Up
-          posY -= speed;
+          up()
           break;
         case "s": // Move Down
-          posY += speed;
+          down()
           break;
         case "a": // Move Left
-          posX -= speed;
+          left()
           break;
         case "d": // Move Right
-          posX += speed;
+          right()
           break;
         default:
           return; // Exit function if any other key is pressed
       }
-
-      // 4. Block default window scrolling behavior when pressing W or S
       event.preventDefault(); 
-
-      // 5. Update the CSS transform values
-      img.style.transform = `translate(${posX}px, ${posY}px)`;
     });
+
+    function up() {
+      posY -= speed;
+      img.style.transform = `translate(${posX}px, ${posY}px)`;
+    }
+    function down() {
+      posY += speed;
+      img.style.transform = `translate(${posX}px, ${posY}px)`;
+    }
+    function left() {
+      posX -= speed;
+      img.style.transform = `translate(${posX}px, ${posY}px)`;
+    }
+    function right() {
+      posX += speed;
+      img.style.transform = `translate(${posX}px, ${posY}px)`;
+    }

@@ -13,7 +13,7 @@ let numSquares = 0;
 for (let i = 1; i < firstDay + 1;i++) {
 
     const newDay = document.createElement("div")
-    if (i % 7 == 0 || i % 7 == 1) {
+    if (i % 7 === 0 || i % 7 === 1) {
         newDay.className = "weekend";
     }
     else {
@@ -35,21 +35,21 @@ for (let i = 1; i < monthLength+1;i++) {
     const newDay = document.createElement("div")
 
 
-    if (i % 7 == low || i % 7 == high) {
+    if (i % 7 === low || i % 7 === high) {
         newDay.className = "weekend";
     }
-    else if (firstDay == 1 && i % 7 == 0) {
+    else if (firstDay === 1 && i % 7 === 0) {
         newDay.className = "weekend";
     }
-    else if (i % 7 == mid) {
+    else if (i % 7 === mid) {
         let mon = curMonth;
         if (mon > 4 && mon < 8) {
             // first and last days of school :3
-            if (mon == 7) {
+            if (mon === 7) {
                 if (i > 24) {
                     lastWed = i;
                     newDay.className = "wed";
-                    if (nextDay == 0 && dayOfMonth <= i) {
+                    if (nextDay === 0 && dayOfMonth <= i) {
                         nextDay = i;
                     }
                 }
@@ -57,11 +57,11 @@ for (let i = 1; i < monthLength+1;i++) {
                     newDay.className = "weekday";
                 }
             }
-            else if (mon == 5) {
+            else if (mon === 5) {
                 if (i < 12) { // excluding the last day bc prolly no club then lol
                     lastWed = i;
                     newDay.className = "wed";
-                    if (nextDay == 0 && dayOfMonth <= i) {
+                    if (nextDay === 0 && dayOfMonth <= i) {
                         nextDay = i;
                     }
                 }
@@ -76,7 +76,7 @@ for (let i = 1; i < monthLength+1;i++) {
         else {
             lastWed = i;
             newDay.className = "wed";
-            if (nextDay == 0 && dayOfMonth <= i) {
+            if (nextDay === 0 && dayOfMonth <= i) {
                         nextDay = i;
             }
         }
@@ -85,10 +85,10 @@ for (let i = 1; i < monthLength+1;i++) {
         newDay.className = "weekday";
     }
     //
-    if (i == dayOfMonth) {
+    if (i === dayOfMonth) {
         newDay.className = "today";
         newDay.style.fontWeight = "bold";
-        if (nextDay == i) {
+        if (nextDay === i) {
                         nextDay = i;
         }
     }
@@ -118,15 +118,15 @@ if (numSquares %7 !== 0){
 }
 
 
-if (nextDay == 0) {
+if (nextDay === 0) {
     nextDay = "<Cannot Load Day>";
 }
 
 monthText.textContent = monthsList[curMonth];
-if (nextDay == dayOfMonth) {
+if (nextDay === dayOfMonth) {
     nextMeetingText.textContent = "Our next meeting is: " + "Today, "+ monthText.textContent +" "+ nextDay +", at 2:40pm in room 271";
 }
-else if (nextDay == dayOfMonth + 1){
+else if (nextDay === dayOfMonth + 1){
     nextMeetingText.textContent = "Our next meeting is: " + "Tomorrow, "+ monthText.textContent +" "+ nextDay +", at 2:40pm in room 271";
 }
 else {
@@ -170,7 +170,7 @@ function showImage() {
     const image = document.getElementById("diceLogo");
     
     // Change the display style to make it visible
-    if (image.style.display == "none") {
+    if (image.style.display === "none") {
     image.style.display = "block"
     }
     else {

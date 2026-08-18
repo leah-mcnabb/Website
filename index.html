@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="allderdice_logo.png">
-    <script src="index.js"></script>
+    <!-- <script src="index.js"></script> -->
     <style>
         body {
             cursor: url('mouse_cursor.gif'), auto;
@@ -37,13 +37,21 @@
 }
 .container .weekend {
   background-color: #c6c5c5;
-  border: 1px solid black;
+  border: px solid black;
   padding: 10px;
   font-size: 3vw;
   text-align: center;
 }
 .container .wed {
   background-color: rgb(145, 207, 153);
+  
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 3vw;
+  text-align: center;
+}
+.container .today {
+  background-color: rgb(222, 145, 255);
   
   border: 1px solid black;
   padding: 10px;
@@ -70,24 +78,26 @@
 
 
     <p>Welcome to the Allderdice Linguistics Club website!</p>
-    <p>Our next meeting is: <strong>Wednesday, August 26th at 2:40pm in room 271</strong></p>
+    <p id = "nextMeetingText">Our next meeting is: Cannot Load</p>
 
-    <p style="font-size: 25px; text-align: center">August:</p>
+    <p id="monthText" style="font-size: 25px; text-align: center">Month:</p>
     
     <div class="container">
 
-    <script type="text/javascript" src="//://google.com"></script>
-
-  
   <div class="weekend">Sun</div>
   <div class="weekday">Mon</div>
   <div class="weekday">Tue</div>
-  <div class="weekday">Wed</div>
+  <div class="wed">Wed</div>
   <div class="weekday">Thu</div>
   <div class="weekday">Fri</div>
   <div class="weekend">Sat</div>
 
-  <div class="weekend"></div>
+  <script src="index.js"></script>
+
+  
+
+
+  <!-- <div class="weekend"></div>
   <div class="weekday"></div>
   <div class="weekday"></div>
   <div class="weekday"></div>
@@ -133,7 +143,7 @@
   <div class="weekday"></div>
   <div class="weekday"></div>
   <div class="weekday"></div>
-  <div class="weekend"></div>
+  <div class="weekend"></div> -->
   
 
 </div>

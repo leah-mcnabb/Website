@@ -9,6 +9,7 @@ const monthText = document.getElementById("monthText");
 const monthsList = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
 // document.body.appendChild(dayText);
+let numSquares = 0;
 for (let i = 1; i < firstDay + 1;i++) {
 
     const newDay = document.createElement("div")
@@ -19,7 +20,8 @@ for (let i = 1; i < firstDay + 1;i++) {
         newDay.className = "weekday";
     }
     newDay.textContent = "-";
-
+    
+    numSquares += 1;
     container.appendChild(newDay);
 
 }
@@ -92,8 +94,27 @@ for (let i = 1; i < monthLength+1;i++) {
     }
     newDay.textContent = i;
 
+    numSquares += 1;
     container.appendChild(newDay);
 
+}
+
+// part im trying to make work
+if (numSquares %7 !== 0){
+    let totalSquares = Math.ceil(numSquares/7)*7;
+    let squaresNeeded = totalSquares - numSquares;
+    for (let i=1; i<squaresNeeded; i++){
+        const newDay = document.createElement("div")
+        newDay.className = "weekday";
+        newDay.textContent = "-";
+        // newDay.className;
+        // newDay.textContent;
+        container.appendChild(newDay);
+    }
+    const newDay = document.createElement("div")
+    newDay.className = "weekend";
+    newDay.textContent = "-";
+    container.appendChild(newDay);
 }
 
 

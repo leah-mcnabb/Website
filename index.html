@@ -26,20 +26,21 @@
   /* width: 90%; */
   width: 90%;
   height: 90%;
+  margin: auto;
   
 }
 .container .weekday {
   background-color: #fdfcfc;
   border: 1px solid black;
   padding: 10px;
-  font-size: 3vw;
+  font-size: 4vw;
   text-align: center;
 }
 .container .weekend {
   background-color: #c6c5c5;
   border: px solid black;
   padding: 10px;
-  font-size: 3vw;
+  font-size: 4vw;
   text-align: center;
 }
 .container .wed {
@@ -47,7 +48,7 @@
   
   border: 1px solid black;
   padding: 10px;
-  font-size: 3vw;
+  font-size: 4vw;
   text-align: center;
 }
 .container .today {
@@ -55,15 +56,20 @@
   
   border: 1px solid black;
   padding: 10px;
-  font-size: 3vw;
+  font-size: 4vw;
   text-align: center;
 }
 
-@media screen and (max-width: 285px){
+@media screen and (max-width: 350px){
   .container .weekday,
   .container .weekend,
-  .container .wed{
-    padding: 0;
+  .container .wed,
+  .container .today{ 
+    padding: 8px 5px;
+    
+  }
+  .container{
+    padding: 5px;
   }
 }
 
@@ -79,7 +85,7 @@
 
     <p>Welcome to the Allderdice Linguistics Club website!</p>
     <p id = "nextMeetingText">Our next meeting is: Cannot Load</p>
-
+    
     <p id="monthText" style="font-size: 25px; text-align: center">Month:</p>
     
     <div class="container">

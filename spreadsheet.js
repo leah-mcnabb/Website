@@ -25,7 +25,12 @@ const url = `https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx
 
     //gets value of C2 on the sheet
     const notification = json.table.rows[0].c[2].v;
-    $("#notification").text(notification)
+    if (notification){
+      $("#notification").text(notification)
+      $("#notification").addClass("notification")
+    }
+    
+
 
     const day = meeting_days[0];
     const month = meeting_months[0];

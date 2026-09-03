@@ -10,7 +10,9 @@ const monthsList = ["January","February","March","April","May","June","July","Au
 const spreadsheetId2 = '11bVwIgamf-boMEBp3MnZkhgDeJU1NIHouVpELfVy8ys';
 const url2 = `https://docs.google.com/spreadsheets/d/${spreadsheetId2}/gviz/tq?tqx=out:json`;
 
-let meeting_days = [];
+const meeting_days = [];
+const meeting_months = [];
+console.log(curMonth + "is the current month");
 
 fetch(url2)
   .then((res) => res.text())
@@ -27,7 +29,6 @@ fetch(url2)
     } $("#meeting_days").text(meeting_days)
 
     //gets months of the meetings
-    const meeting_months = [];
     for (var i = 0; i < json.table.rows.length; ++i){
         meeting_months.push(json.table.rows[i].c[0].v);
     } $("#meeting_months").text(meeting_months)
@@ -45,6 +46,7 @@ fetch(url2)
 function MakeCalendar(){
 console.log(dayOfMonth);
 console.log(curMonth);
+console.log("this month is " + meeting_months[0]);
 
 // document.body.appendChild(dayText);
 let numSquares = 0;
@@ -80,19 +82,16 @@ for (let i = 1; i < monthLength+1;i++) {
     else if (firstDay === 1 && i % 7 === 0) {
         newDay.className = "weekend";
     }
-    //wednesdays
-    else if (i % 7 === mid) {
-        let mon = curMonth;
-        newDay.className = "weekday";
-    }
     else {
 
         let numMeetings = meeting_days.length;
-        console.log(meeting_days.length);
 
         newDay.className="weekday";
         for (let a = 0; a<numMeetings; a++){
-            if (i === meeting_days[a]){
+            if (i === meeting_days[a] && curMonth === meeting_months[a]-1){
+                // && curMonth === meeting_months[a] + 1
+                console.log("meeting month is " + meeting_months[a]);
+                console.log("current month is " + curMonth);
                 console.log(meeting_days[a]);
                 console.log("found meeting day " + i );
                 newDay.className = "wed";

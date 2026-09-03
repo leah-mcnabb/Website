@@ -148,7 +148,7 @@ else {
 }
 //
 if (dayOfMonth > lastWed) {
-    nextMeetingText.textContent = "Our next meeting is: next Wednesday, at 2:40pm in room 271";
+    nextMeetingText.textContent = "Our next meeting is: next Monday, at 2:40pm in room 271";
 }
 nextMeetingText.style.fontWeight = "bold";
 }

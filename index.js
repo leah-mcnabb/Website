@@ -8,6 +8,9 @@ const nextMeetingText = document.getElementById("nextMeetingText");
 const monthText = document.getElementById("monthText");
 const monthsList = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
+console.log(dayOfMonth);
+console.log(curMonth);
+
 // document.body.appendChild(dayText);
 let numSquares = 0;
 for (let i = 1; i < firstDay + 1;i++) {

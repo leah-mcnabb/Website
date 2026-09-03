@@ -7,7 +7,42 @@ const curMonth = new Date().getMonth();
 const nextMeetingText = document.getElementById("nextMeetingText");
 const monthText = document.getElementById("monthText");
 const monthsList = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const spreadsheetId2 = '11bVwIgamf-boMEBp3MnZkhgDeJU1NIHouVpELfVy8ys';
+const url2 = `https://docs.google.com/spreadsheets/d/${spreadsheetId2}/gviz/tq?tqx=out:json`;
 
+let meeting_days = [];
+
+fetch(url2)
+  .then((res) => res.text())
+  .then((data) => {
+    // Google returns JSON wrapped in a function call; strip wrapper
+    const json = JSON.parse(data.substring(47, data.length - 2));
+    console.log('Sheet Columns:', json.table.cols);
+    console.log('Sheet Rows:', json.table.rows);
+    console.log(json);
+
+    //gets days of the meetings
+    for (var i = 0; i < json.table.rows.length; ++i) {
+        meeting_days.push(json.table.rows[i].c[1].v);
+    } $("#meeting_days").text(meeting_days)
+
+    //gets months of the meetings
+    const meeting_months = [];
+    for (var i = 0; i < json.table.rows.length; ++i){
+        meeting_months.push(json.table.rows[i].c[0].v);
+    } $("#meeting_months").text(meeting_months)
+
+    const next_day = meeting_days[0];
+    const next_month = meeting_months[0];
+    const next_meeting = next_month + '-' + next_day + '-2026';
+    // $("#next_meeting").text(notification)
+    // next_meeting.textContent("hello")
+    MakeCalendar();
+
+});
+
+
+function MakeCalendar(){
 console.log(dayOfMonth);
 console.log(curMonth);
 
@@ -34,6 +69,7 @@ for (let i = 1; i < monthLength+1;i++) {
 
     let low = 7 - firstDay;
     let high = 8 - firstDay;
+    //calculates wednesday
     let mid = (firstDay < 5) ? low - 3 : high + 3;
     const newDay = document.createElement("div")
 
@@ -44,45 +80,20 @@ for (let i = 1; i < monthLength+1;i++) {
     else if (firstDay === 1 && i % 7 === 0) {
         newDay.className = "weekend";
     }
+    //wednesdays
     else if (i % 7 === mid) {
         let mon = curMonth;
-        if (mon > 4 && mon < 8) {
-            // first and last days of school :3
-            if (mon === 7) {
-                if (i > 24) {
-                    lastWed = i;
-                    newDay.className = "wed";
-                    if (nextDay === 0 && dayOfMonth <= i) {
-                        nextDay = i;
-                    }
-                }
-                else {
-                    newDay.className = "weekday";
-                }
-            }
-            else if (mon === 5) {
-                if (i < 12) { // excluding the last day bc prolly no club then lol
-                    lastWed = i;
-                    newDay.className = "wed";
-                    if (nextDay === 0 && dayOfMonth <= i) {
-                        nextDay = i;
-                    }
-                }
-                else {
-                    newDay.className = "weekday";
-                }
-            }
-            else {
-                newDay.className = "weekday";
+        let numMeetings = meeting_days.length;
+        console.log(meeting_days.length);
+
+        newDay.className="weekday";
+        for (let i = 0; i<numMeetings; i++){
+            if (i===meeting_days[i]){
+                
             }
         }
-        else {
-            lastWed = i;
-            newDay.className = "wed";
-            if (nextDay === 0 && dayOfMonth <= i) {
-                        nextDay = i;
-            }
-        }
+        //working here   
+        console.log("hello");
     }
     else {
         newDay.className = "weekday";
@@ -140,6 +151,7 @@ if (dayOfMonth > lastWed) {
     nextMeetingText.textContent = "Our next meeting is: next Wednesday, at 2:40pm in room 271";
 }
 nextMeetingText.style.fontWeight = "bold";
+}
 
 function Click() {
     clicks += 1;

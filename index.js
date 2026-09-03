@@ -83,20 +83,23 @@ for (let i = 1; i < monthLength+1;i++) {
     //wednesdays
     else if (i % 7 === mid) {
         let mon = curMonth;
+        newDay.className = "weekday";
+    }
+    else {
+
         let numMeetings = meeting_days.length;
         console.log(meeting_days.length);
 
         newDay.className="weekday";
-        for (let i = 0; i<numMeetings; i++){
-            if (i===meeting_days[i]){
-                
+        for (let a = 0; a<numMeetings; a++){
+            if (i === meeting_days[a]){
+                console.log(meeting_days[a]);
+                console.log("found meeting day " + i );
+                newDay.className = "wed";
             }
         }
         //working here   
-        console.log("hello");
-    }
-    else {
-        newDay.className = "weekday";
+  
     }
     //
     if (i === dayOfMonth) {

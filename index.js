@@ -153,6 +153,12 @@ for (let i = 1; i < displayMonthLength+1;i++) {
                 console.log(meeting_days[a]);
                 console.log("found meeting day " + i );
                 newDay.className = "wed";
+                newDay.addEventListener ("mouseenter", () => {
+                    newDay.textContent = "Meeting Day!";
+                });
+                newDay.addEventListener ("mouseleave", () =>{
+                    newDay.textContent = i;
+                });
             }
         }
         //working here   
@@ -162,6 +168,12 @@ for (let i = 1; i < displayMonthLength+1;i++) {
     if (i === dayOfMonth && curMonth == displayMonth) {
         newDay.className = "today";
         newDay.style.fontWeight = "bold";
+        newDay.addEventListener ("mouseenter", () => {
+                    newDay.textContent = "Today!";
+        });
+        newDay.addEventListener ("mouseleave", () =>{
+            newDay.textContent = i;
+        });
         if (nextDay === i) {
                         nextDay = i;
         }
@@ -214,6 +226,7 @@ if (dayOfMonth > lastWed) {
 }
 nextMeetingText.style.fontWeight = "bold";
 }
+
 
 function Click() {
     clicks += 1;

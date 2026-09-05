@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Geomini:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Redacted+Script:wght@300;400;700&display=swap');
+body {
+    cursor: url('mouse_cursor.gif'), auto;
+    animation: cursor 1s linear infinite;
+            
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: rgb(216, 149, 255);
+  padding: 10px;
+  /* width: 90%; */
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  max-width: 700px;
+  
+}
+.container .weekday {
+  background-color: #fdfcfc;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 4vw;
+  text-align: center;
+}
+.container .weekend {
+  background-color: #c6c5c5;
+  border: px solid black;
+  padding: 10px;
+  font-size: 4vw;
+  text-align: center;
+}
+.container .wed {
+  background-color: rgb(145, 207, 153);
+  
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 4vw;
+  text-align: center;
+}
+.container .today {
+  background-color: rgb(222, 145, 255);
+  
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 4vw;
+  text-align: center;
+}
+.container .weekday:hover,
+.container .weekend:hover,
+.container .wed:hover,
+.container .today:hover
+{
+    background-color:rgb(31, 175, 50)
+    
+}
+
+@media screen and (max-width: 450px){
+  .container .weekday,
+  .container .weekend,
+  .container .wed,
+  .container .today{ 
+    padding: 8px 5px;
+    
+  }
+  .container{
+    padding: 5px;
+  }
+}
+@media screen and (min-width: 400px){
+  .container .weekday,
+  .container .weekend,
+  .container .wed,
+  .container .today{
+    font-size: 20px;
+  }
+}
+.arrow1 {
+    width: 3ch;
+    height: 3ch;
+    position: absolute; 
+    top: 36%;
+    right: 23%;
+    font-size: 15px;
+    background-color: #ea8aff
+  }
+  .arrow2 {
+    width: 3ch;
+    height: 3ch;
+    position: absolute; 
+    top: 36%;
+    right: 72%;
+    font-size: 15px;
+    background-color: #ea8aff
+  }
+  .arrow1:hover {
+    cursor: grab;
+  }
+  .arrow2:hover {
+    cursor: grab;
+  }

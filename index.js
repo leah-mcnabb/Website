@@ -169,7 +169,8 @@ for (let i = 1; i < displayMonthLength+1;i++) {
         newDay.className = "today";
         newDay.style.fontWeight = "bold";
         newDay.addEventListener ("mouseenter", () => {
-                    newDay.textContent = "Today!";
+            newDay.textContent = "Today!";
+            newDay.style.fontWeight = "normal";
         });
         newDay.addEventListener ("mouseleave", () =>{
             newDay.textContent = i;

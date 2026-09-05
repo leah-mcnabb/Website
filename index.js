@@ -10,6 +10,11 @@ const monthsList = ["January","February","March","April","May","June","July","Au
 const spreadsheetId2 = '11bVwIgamf-boMEBp3MnZkhgDeJU1NIHouVpELfVy8ys';
 const url2 = `https://docs.google.com/spreadsheets/d/${spreadsheetId2}/gviz/tq?tqx=out:json`;
 
+let displayMonth = curMonth;
+let displayFirstDay = firstDay;
+let displayMonthLength = monthLength;
+
+
 const meeting_days = [];
 const meeting_months = [];
 console.log(curMonth + "is the current month");
@@ -38,19 +43,69 @@ fetch(url2)
     const next_meeting = next_month + '-' + next_day + '-2026';
     // $("#next_meeting").text(notification)
     // next_meeting.textContent("hello")
-    MakeCalendar();
+    MakeCalendar(curMonth);
+    
 
 });
 
 
-function MakeCalendar(){
+function changeMonthAndUpdate(amount) {
+    displayMonth += amount;
+    if (displayMonth > 11) {displayMonth=0}
+    if (displayMonth < 0) {displayMonth=11}
+    displayFirstDay = new Date(new Date().getFullYear(), displayMonth, 1).getDay();
+    displayMonthLength = new Date(new Date().getFullYear(), displayMonth + 1, 0).getDate();
+    MakeCalendar(displayMonth);
+}
+
+function MakeCalendar(monthNum){
+    
+container.replaceChildren();
+let d = document.createElement("div");
+//
+d.textContent = "Sun";
+d.className = "weekend";
+container.appendChild(d);
+//
+d = document.createElement("div");
+d.textContent = "Mon";
+d.className = "wed";
+container.appendChild(d);
+//
+d = document.createElement("div");
+d.textContent = "Tue";
+d.className = "weekday";
+container.appendChild(d);
+//
+d = document.createElement("div");
+d.textContent = "Wed";
+d.className = "weekday";
+container.appendChild(d);
+//
+d = document.createElement("div");
+d.textContent = "Thu";
+d.className = "weekday";
+container.appendChild(d);
+//
+d = document.createElement("div");
+d.textContent = "Fri";
+d.className = "weekday";
+container.appendChild(d);
+//
+d = document.createElement("div");
+d.textContent = "Sat";
+d.className = "weekend";
+container.appendChild(d);
+
+
 console.log(dayOfMonth);
 console.log(curMonth);
 console.log("this month is " + meeting_months[0]);
 
 // document.body.appendChild(dayText);
 let numSquares = 0;
-for (let i = 1; i < firstDay + 1;i++) {
+let c = 0;
+for (let i = 1; i < displayFirstDay + 1;i++) {
 
     const newDay = document.createElement("div")
     if (i % 7 === 0 || i % 7 === 1) {
@@ -67,19 +122,22 @@ for (let i = 1; i < firstDay + 1;i++) {
 }
 let nextDay = 0;
 let lastWed = 0;
-for (let i = 1; i < monthLength+1;i++) {
+for (let i = 1; i < displayMonthLength+1;i++) {
 
-    let low = 7 - firstDay;
-    let high = 8 - firstDay;
+    let low = 7 - displayFirstDay;
+    let high = 8 - displayFirstDay;
     //calculates wednesday
-    let mid = (firstDay < 5) ? low - 3 : high + 3;
+    let mid = (displayFirstDay < 5) ? low - 3 : high + 3;
     const newDay = document.createElement("div")
 
 
     if (i % 7 === low || i % 7 === high) {
         newDay.className = "weekend";
     }
-    else if (firstDay === 1 && i % 7 === 0) {
+    else if (displayFirstDay === 1 && i % 7 === 0) {
+        newDay.className = "weekend";
+    }
+    else if ((i % 7 === 0 || i % 7 === 1) && displayFirstDay === 0) {
         newDay.className = "weekend";
     }
     else {
@@ -88,10 +146,10 @@ for (let i = 1; i < monthLength+1;i++) {
 
         newDay.className="weekday";
         for (let a = 0; a<numMeetings; a++){
-            if (i === meeting_days[a] && curMonth === meeting_months[a]-1){
+            if (i === meeting_days[a] && monthNum === meeting_months[a]-1){
                 // && curMonth === meeting_months[a] + 1
                 console.log("meeting month is " + meeting_months[a]);
-                console.log("current month is " + curMonth);
+                console.log("current month is " + monthNum);
                 console.log(meeting_days[a]);
                 console.log("found meeting day " + i );
                 newDay.className = "wed";
@@ -101,7 +159,7 @@ for (let i = 1; i < monthLength+1;i++) {
   
     }
     //
-    if (i === dayOfMonth) {
+    if (i === dayOfMonth && curMonth == displayMonth) {
         newDay.className = "today";
         newDay.style.fontWeight = "bold";
         if (nextDay === i) {
@@ -138,7 +196,9 @@ if (nextDay === 0) {
     nextDay = "<Cannot Load Day>";
 }
 
-monthText.textContent = monthsList[curMonth];
+// monthText.textContent = monthsList[monthNum] + " " + new Date().getFullYear();
+monthText.innerHTML = `${monthsList[monthNum]}<span style="font-size: 12px;"> ${new Date().getFullYear()}</span>`;
+// monthText.style.anchorName = "monthText";
 if (nextDay === dayOfMonth) {
     nextMeetingText.textContent = "Our next meeting is: " + "Today, "+ monthText.textContent +" "+ nextDay +", at 2:40pm in room 271";
 }

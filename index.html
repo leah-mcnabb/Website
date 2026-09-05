@@ -85,9 +85,28 @@
     font-size: 20px;
   }
 }
+.arrow1 {
+    width: 3ch;
+    height: 3ch;
+    position: absolute; 
+    top: 36%;
+    right: 23%;
+    font-size: 15px;
+    background-color: #ea8aff
+  }
+  .arrow2 {
+    width: 3ch;
+    height: 3ch;
+    position: absolute; 
+    top: 36%;
+    right: 72%;
+    font-size: 15px;
+    background-color: #ea8aff
+  }
 
 </style>
 <body>
+  
     <ul>
       <li><a href="index.html"class="active">Home</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -107,20 +126,13 @@
 
     
     <p id="monthText" style="font-size: 25px; text-align: center">Month:</p>
-    
-    <div class="container">
 
-  <div class="weekend">Sun</div>
-  <div class="wed">Mon</div>
-  <div class="weekday">Tue</div>
-  <div class="weekday">Wed</div>
-  <div class="weekday">Thu</div>
-  <div class="weekday">Fri</div>
-  <div class="weekend">Sat</div>
-
+  <div class="container"></div>
   <script src="index.js"></script>
+  <button onclick="changeMonthAndUpdate(1)" class="arrow1" ><strong>></strong></button>
+  <button onclick="changeMonthAndUpdate(-1)" class="arrow2" ><strong><</strong></button>
 
-  
+
 
 
   <!-- <div class="weekend"></div>

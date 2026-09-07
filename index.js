@@ -155,6 +155,7 @@ for (let i = 1; i < displayMonthLength+1;i++) {
                 newDay.className = "wed";
                 newDay.addEventListener ("mouseenter", () => {
                     newDay.textContent = "Meeting Day!";
+                    showImage()
                 });
                 newDay.addEventListener ("mouseleave", () =>{
                     newDay.textContent = i;

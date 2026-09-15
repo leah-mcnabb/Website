@@ -42,6 +42,7 @@
             display: flex; 
             align-items: center; 
             gap: 10px;
+            margin-top: 15px;
         }
         .dropdown:hover{
             cursor: grab;
@@ -135,6 +136,19 @@
         alt="NACLO logo">
         <h2>Thank you for reading!</h2>
     </div>
+    
+    <div id="heading2" class="dropdown" >
+        <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex-grow: 1;">
+            <p><strong>Conlanging Project</strong> (9/14/26)</p>
+        </span>
+        <!-- <button class="arrow"><strong>v</strong></button> -->
+         <p id="dropdownarrow2" style="font-size:18px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><strong>V</strong></p>
+    </div>
+
+    <div id="body2" class="articlebody" style="padding-left: 15px; flex-direction: column;">
+        <h3>What is Conlanging?</h2>
+        <h2>Thank you for reading!</h2>
+    </div>
 
 
 
@@ -168,11 +182,33 @@
             }
         }
 
+        let total = 2;
         let div = document.getElementById("heading1");
         // div.textContent = showing[0];
         div.addEventListener("click", () => {
             showArticle(1)
         });
+
+        div = document.getElementById("heading2");
+        div.addEventListener("click", () => {
+            showArticle(2)
+        });
+        //
+        for (i = 1; i < total+1; i++) {
+            let heading = document.getElementById("heading"+i);
+            let arrow = document.getElementById("dropdownarrow"+i);
+            let body = document.getElementById("body"+i);
+            if (i % 2 !== 0) {
+                heading.style.backgroundColor = "#ea8aff";
+                arrow.style.backgroundColor = "#ea8aff";
+                body.style.border = "10px solid #ea8aff";
+            }
+            else {
+                heading.style.backgroundColor = "rgb(137, 189, 132)";
+                arrow.style.backgroundColor = "rgb(137, 189, 132)";
+                body.style.border = "10px solid rgb(137, 189, 132)";
+            }
+        }
         //
 
     </script>
